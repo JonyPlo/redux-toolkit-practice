@@ -6,7 +6,6 @@ import { increment, decrement, incrementBy } from './store/slices/counter';
 
 function App() {
   const { counter } = useSelector((state) => state.counter);
-
   const dispatch = useDispatch();
 
   return (

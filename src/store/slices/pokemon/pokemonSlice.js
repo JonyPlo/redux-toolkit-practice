@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  page: 0,
+  nextPage: 0,
   pokemons: [],
   isLoading: false,
 };
@@ -10,15 +10,17 @@ export const pokemonSlice = createSlice({
   name: 'pokemon',
   initialState,
   reducers: {
-    startLoaginPokemons: (state /* action */) => {
+    startLoadingPokemons: (state /* action */) => {
       state.isLoading = true;
     },
 
     setPokemons: (state, action) => {
-      console.log(action);
+      state.isLoading = false
+      state.pokemons = action.payload.pokemons
+      state.nextPage = action.payload.nextPage
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { startLoaginPokemons, setPokemons } = pokemonSlice.actions;
+export const { startLoadingPokemons, setPokemons } = pokemonSlice.actions;
