@@ -1,3 +1,5 @@
+// Al store se le dice que es la fuente unica de la verdad
+
 import { configureStore } from '@reduxjs/toolkit';
 import { counterSlice } from './slices/counter';
 import { pokemonSlice } from './slices/pokemon';
